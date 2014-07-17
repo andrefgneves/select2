@@ -1360,7 +1360,7 @@ the specific language governing permissions and limitations under the Apache Lic
 
                     this.clearDropdownAlignmentPreference();
 
-                    $("#select2-drop-mask").hide();
+                    $(".select2-drop-mask").hide();
                     this.dropdown.removeAttr("id"); // only the active dropdown has the select2-drop id
                     this.dropdown.hide();
                     this.container.removeClass("select2-dropdown-open").removeClass("select2-container-active");
