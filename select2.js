@@ -1487,6 +1487,17 @@ the specific language governing permissions and limitations under the Apache Lic
                 },
 
                 // abstract
+                addSelectedClass: function (index) {
+                    var choices = this.findHighlightableChoices(),
+                        choice;
+
+                    if (index >= choices.length) index = choices.length - 1;
+                    if (index < 0) index = 0;
+
+                    $(choices[index]).addClass("select2-result-current");
+                },
+
+                // abstract
                 countSelectableResults: function() {
                     return this.findHighlightableChoices().length;
                 },
@@ -2219,6 +2230,10 @@ the specific language governing permissions and limitations under the Apache Lic
                         } else {
                             this.highlight(0);
                         }
+                    }
+
+                    if (selected >= 0) {
+                        this.addSelectedClass(selected);
                     }
 
                     // hide the search box if this is the first we got the results and there are enough of them for search
