@@ -2400,13 +2400,14 @@ the specific language governing permissions and limitations under the Apache Lic
 
                 // single
                 postprocessResults: function (data, initial, noHighlightUpdate) {
-                    var selected = 0, self = this, showSearchInput = true;
+                    var selected = 0, self = this, showSearchInput = true, current = -1;
 
                     // find the selected element in the result list
 
                     this.findHighlightableChoices().each2(function (i, elm) {
                         if (equal(self.id(elm.data("select2-data")), self.opts.element.val())) {
                             selected = i;
+                            current = i;
                             return false;
                         }
                     });
@@ -2420,8 +2421,8 @@ the specific language governing permissions and limitations under the Apache Lic
                         }
                     }
 
-                    if (selected >= 0) {
-                        this.addSelectedClass(selected);
+                    if (current >= 0) {
+                        this.addSelectedClass(current);
                     }
 
                     // hide the search box if this is the first we got the results and there are enough of them for search
