@@ -723,7 +723,7 @@ the specific language governing permissions and limitations under the Apache Lic
                     if (opts.dropdownContainer) {
                         this.body = opts.dropdownContainer;
                     } else {
-                        this.body = opts.element.closest("body");
+                        this.body = $(document.body);
                     }
 
                     syncCssClasses(this.container, this.opts.element, this.opts.adaptContainerCssClass);
