@@ -1293,7 +1293,7 @@ the specific language governing permissions and limitations under the Apache Lic
                         $dropdown.addClass('select2-drop-auto-width');
                         $dropdown.css('width', '');
                         // Add scrollbar width to dropdown if vertical scrollbar is present
-                        dropWidth = $dropdown.outerWidth(false) + (resultsListNode.scrollHeight === resultsListNode.clientHeight ? 0 : scrollBarDimensions.width);
+                        dropWidth = $dropdown.outerWidth(false) + (resultsListNode.scrollHeight === resultsListNode.clientHeight ? 0 : scrollBarDimensions.width) + 1;
                         dropWidth > width ? width = dropWidth : dropWidth = width;
                         dropHeight = $dropdown.outerHeight(false);
                         enoughRoomOnRight = dropLeft + dropWidth <= viewPortRight;
